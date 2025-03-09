@@ -1,8 +1,11 @@
 {
+  "Navbar": { "title": "تطبيقى", "Logout": "تسجيل الخروج" },
+  "Footer_text": "حقوق النشر  {{year}} تطبيقى. كل الحقوق محفوظة.",
   "LogOutPopUp": {
-    "LogOutPopUpTitle": "هل أنت متأكد أنك تريد تسجيل الخروج ؟",
-    "SubmitBtnText": "تأكيد",
-    "CancelBtnText": "رجوع",
-    "toast_error": "الرجاء تسجيل الدخول أولا!"
+    "title": "تأكيد الخروج",
+    "subtitle": "هل أنت متأكد أنك تريد الخروج من التطبيق ؟",
+    "Confirm": "تأكيد",
+    "Cancel": "إلغاء"
   }
 }
+

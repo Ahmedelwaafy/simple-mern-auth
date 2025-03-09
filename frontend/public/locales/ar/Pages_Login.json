@@ -2,83 +2,37 @@
   "tab": {
     "title": "Sacramento | تسجيل الدخول"
   },
-  "VerificationCodeForm": {
-    "heading_forget_password": "قم بإضافة الرمز الذي تم إرساله إليك لإعادة تعيين كلمة المرور",
-    "heading_verify_code": "أضف الرمز الذي أرسل إليك للتحقق من الحساب",
-    "code": {
-      "label": "رمز التحقق",
-      "placeholder": "رمز التحقق"
-    },
-    "SubmitBtnComponent": {
-      "value": "إرسال"
-    }
-  },
-  "ForgetPasswordForm": {
-    "heading": "قم بتعيين كلمة المرور الجديدة",
-    "new_password": {
-      "label": "كلمة المرور",
-      "placeholder": "كلمة المرور"
-    },
-    "confirm_new_password": {
-      "label": "تأكيد كلمة المرور",
-      "placeholder": "تأكيد كلمة المرور"
-    },
-    "SubmitBtnComponent": {
-      "value": "إرسال"
-    }
-  },
-  "SendCodeForm": {
-    "heading": "أضف بريدك الإلكتروني لإرسال رمز التحقق",
-    "email": {
-      "label": "البريد إلكتروني",
-      "placeholder": "البريد إلكتروني"
-    },
-    "SubmitBtnComponent": {
-      "value": "إرسال"
-    }
-  },
+
   "LoginForm": {
     "heading": "تسجيل الدخول",
-    "welcome_msg": "مرحبًا بعودتك! ",
+    "welcome_msg": "مرحبًا بعودتك! يرجى إدخال معلوماتك.",
     "email": {
-      "label": "البريد إلكتروني",
-      "placeholder": "البريد إلكتروني"
+      "label": "البريد الإلكتروني",
+      "placeholder": "البريد الإلكتروني"
     },
     "password": {
       "label": "كلمة المرور",
       "placeholder": "كلمة المرور"
     },
     "remember_me": {
-      "label": "تذكرنى"
+      "label": "تذكرني"
     },
-    "Forgot_password": "هل نسيت كلمة السر ؟",
-    "SubmitBtnComponent": {
-      "value": "تسجيل الدخول"
-    },
+    "SubmitBtnComponent": { "value": "تسجيل الدخول" },
     "have_no_account": "ليس لديك حساب؟",
-    "register": "انشيء واحدا"
+    "register": "أنشئ حسابًا",
+    "Forgot_password": "هل نسيت كلمة المرور؟"
   },
   "validations": {
     "email": {
-      "required": "البريد الالكتروني مطلوب.",
-      "pattern": "عنوان البريد الإلكتروني غير صحيح."
+      "required": "البريد الإلكتروني مطلوب.",
+      "pattern": "عنوان البريد الإلكتروني غير صالح."
     },
     "password": {
       "required": "كلمة المرور مطلوبة.",
-      "minLength": "الحد الأدنى لكلمة المرور هو  ٨ أحرف."
-    },
-    "new_password": {
-      "required": "تأكيد كلمة المرور الجديدة مطلوبة.",
-      "minLength": "الحد الأدنى لطول كلمة المرور الجديدة هو 8 أحرف."
-    },
-    "confirm_new_password": {
-      "required": "تأكيد كلمة المرور الجديدة مطلوبة.",
-      "minLength": "الحد الأدنى لتأكيد كلمة المرور الجديدة هو  ٨ أحرف.",
-      "validate": "كلمات المرور الجديدة غير متطابقة."
-    },
-    "code": {
-      "required": "الكود مطلوب.",
-      "pattern": "الرمز غير صحيح."
+      "minLength": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+      "letter": "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل.",
+      "number": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل.",
+      "specialChar": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل."
     }
   }
 }

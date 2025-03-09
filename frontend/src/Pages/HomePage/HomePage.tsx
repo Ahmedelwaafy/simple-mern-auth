@@ -62,16 +62,14 @@ export function Component() {
       {/* Main Content */}
       <section className="flex-1 container py-8">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h1 className="text-3xl font-bold text-center">
-            Welcome to the application.
-          </h1>
+          <h1 className="text-3xl font-bold text-center">{t("title")}</h1>
 
           <div className="space-y-6">
             <form onSubmit={handleSubmit} className="flex gap-2">
               <input
                 ref={inputRef}
                 type="text"
-                placeholder="Enter your favorite subject"
+                placeholder={t("input_placeholder")}
                 className="flex-1   h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                 disabled={isPendingAddingSubject}
               />
@@ -81,12 +79,12 @@ export function Component() {
                 isPending={isPendingAddingSubject}
                 className="min-w-20"
               >
-                Add Subject
+                {t("input_cta")}
               </Button>
             </form>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold">Your Favorite Subjects</h2>
+              <h2 className="text-xl font-semibold">{t("subtitle")}</h2>
 
               {isPending ? (
                 // Skeleton loading state
@@ -96,7 +94,10 @@ export function Component() {
                   ))}
                 </div>
               ) : subjects?.length === 0 ? (
-                <p className="text-muted-foreground">No subjects added yet.</p>
+                <p className="text-muted-foreground">
+                  {" "}
+                  {t("no_subjects")}
+                </p>
               ) : (
                 <ScrollArea className="h-[280px]  p-4 rounded-md border">
                   <ul className="space-y-2">

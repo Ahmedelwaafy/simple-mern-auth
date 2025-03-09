@@ -1,12 +1,12 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { SignInDto } from '../dto/signin.dto';
-import { SignInProvider } from './sign-in.provider';
-import { RefreshTokenProvider } from './refresh-token.provider';
-import { RefreshTokenDto } from '../dto/refresh-token.dto';
+import { SignInDto } from './dto/signin.dto';
+import { SignInProvider } from './providers/sign-in.provider';
+import { RefreshTokenProvider } from './providers/refresh-token.provider';
+import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { UserService } from 'src/user/user.service';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
 import { Response } from 'express';
-import { SignOutProvider } from './sign-out.provider';
+import { SignOutProvider } from './providers/sign-out.provider';
 
 @Injectable()
 export class AuthService {

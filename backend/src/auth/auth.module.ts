@@ -2,7 +2,7 @@ import { forwardRef, Module } from '@nestjs/common';
 import { UserModule } from 'src/user/user.module';
 import { AuthController } from './auth.controller';
 import { AccessTokenGuard } from './gaurds/access-token/access-token.guard';
-import { AuthService } from './providers/auth.service';
+import { AuthService } from './auth.service';
 import { BcryptProvider } from './providers/bcrypt.provider';
 import { GenerateTokensProvider } from './providers/generate-tokens.provider';
 import { HashingProvider } from './providers/hashing.provider';

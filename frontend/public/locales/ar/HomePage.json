@@ -1,7 +1,11 @@
 {
   "tab": {
-    "title": "Sacramento",
-    "description": "Sacramento"
+    "title": "الصفحة الرئيسية | Sacramento"
   },
-  "hero_cta": "عرض المنتج"
+
+  "title": "مرحبًا بك في التطبيق.",
+  "subtitle": "المواد المفضلة لديك",
+  "no_subjects": "لم تتم إضافة مواد بعد.",
+  "input_placeholder": "أدخل المادة المفضلة لديك",
+  "input_cta": "أضف المادة"
 }

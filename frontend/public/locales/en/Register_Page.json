@@ -3,12 +3,8 @@
     "title": "Register | Sacramento",
     "description": "Enter your details and create a new account | Sacramento"
   },
-  "user_profile_page_tab": {
-    "title": " | Profile",
-    "description": " | My Profile Page"
-  },
+
   "heading": "Register",
-  "heading_user_profile_page": "MY PROFILE",
 
   "welcome_msg": "Enter your details and create a new account.",
   "form": {
@@ -16,55 +12,23 @@
       "label": "Name",
       "placeholder": "Name"
     },
-    "phone": {
-      "label": "Phone",
-      "placeholder": "Phone"
-    },
+
     "email": {
       "label": "Email",
       "placeholder": "Email"
     },
-    "currentPassword": {
-      "label": "Current Password",
-      "placeholder": "Current Password"
-    },
+
     "password": {
       "label": "Password",
       "placeholder": "Password"
     },
-    "confirmPassword": {
-      "label": "Confirm Password",
-      "placeholder": "Confirm Password"
-    },
+
     "terms": {
       "txt": "I Accept The ",
       "CTA": "Terms & Conditions",
       "validation_required": "You must accept the terms & Conditions."
     },
-    "shop_name_en": {
-      "label": "Shop Name (English)",
-      "placeholder": "Shop Name (English)"
-    },
-    "shop_name_ar": {
-      "label": "Shop Name (Arabic)",
-      "placeholder": "Shop Name (Arabic)"
-    },
-    "address": {
-      "label": "Address",
-      "placeholder": "Address"
-    },
-    "address1": {
-      "label": "First Address",
-      "placeholder": "First Address"
-    },
-    "address2": {
-      "label": "Second Address",
-      "placeholder": "Second Address"
-    },
-    "zipCode": {
-      "label": "Zip Code",
-      "placeholder": "Zip Code"
-    },
+
     "SubmitBtnComponent": { "value": "Register" }
   },
 
@@ -74,60 +38,21 @@
   },
 
   "validations": {
-    "avatar": {
-      "required": "Profile image is required",
-      "validate": "Max image size is 2MB."
-    },
-    "file": {
-      "required": "Profile image is required",
-      "validate": "Max image size is 2MB."
-    },
     "name": {
-      "required": "Name is required"
+      "required": "Name is required",
+      "minLength": "Name Min length is 3 char."
     },
-    "shop_name_en": {
-      "required": "English Name is required",
-      "pattern": "Only english letters are allowed"
-    },
-    "shop_name_ar": {
-      "required": "Arabic Name is required",
-      "pattern": "Only arabic letters are allowed"
-    },
-    "address": {
-      "required": "Address is required"
-    },
-    "address1": {
-      "required": "First Address is required"
-    },
-    "address2": {
-      "required": "Second Address is required"
-    },
-    "phone": {
-      "required": "Phone is required.",
-      "pattern": "Invalid Phone number.",
-      "maxLength": "Invalid Phone number.",
-      "minLength": "Invalid Phone number."
-    },
+
     "email": {
       "required": "Email is required.",
       "pattern": "Invalid Email Address."
     },
-    "zipCode": {
-      "required": "Zip Code is required.",
-      "pattern": "Invalid Zip Code."
-    },
-    "currentPassword": {
-      "minLength": "Password Min length is 8 char."
-    },
     "password": {
       "required": "Password is required.",
-      "minLength": "Password Min length is 8 char.",
-      "validate_old_vs_new": "Old and new passwords can't be the same."
-    },
-    "confirmPassword": {
-      "required": "Confirm Password is required.",
-      "minLength": "Confirm Password Min length is 8 char.",
-      "validate": "Passwords don't match."
+      "minLength": "Password must be at least 8 characters long.",
+      "letter": "Password must contain at least one letter.",
+      "number": "Password must contain at least one number.",
+      "specialChar": "Password must contain at least one special character."
     }
   }
 }

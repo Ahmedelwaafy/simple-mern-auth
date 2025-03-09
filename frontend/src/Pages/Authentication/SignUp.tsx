@@ -77,9 +77,9 @@ export function Component() {
         description={t("tab.description")}
         canonical="register"
       />
-      <Logo className="text-secondary" />
-      <Heading className="mt-3   text-secondary">{t("heading")}</Heading>
-      <SubHeading className="text-balance text-center mb-3 text-secondary">
+      <Logo className="" />
+      <Heading className="mt-3   ">{t("heading")}</Heading>
+      <SubHeading className="text-balance text-center mb-3 ">
         {t("welcome_msg")}
       </SubHeading>
 
@@ -88,7 +88,7 @@ export function Component() {
           encType="multipart/form-data"
           method="post"
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="flex-col-center w-1/5 md:w-10/12 min-w-[450px] md:min-w-[300px] gap-1 border py-5 px-7 border-muted rounded-3xl shadow-xl hover:animated-blob"
+          className="flex-col-center w-1/5 md:w-10/12 min-w-[450px] md:min-w-[300px] gap-1 border py-5 px-7 border-primary rounded-3xl shadow-xl hover:animated-blob"
         >
           {/** Name  */}
           <TextComponent
@@ -139,7 +139,7 @@ export function Component() {
           >
             {t("form.SubmitBtnComponent.value")}
           </Button>
-          <div className="w-full flex justify-center items-center gap-1 text-sm mt-3 text-secondary">
+          <div className="w-full flex justify-center items-center gap-1 text-sm mt-3 ">
             {t("form__bottom.have_an_account")}
             <LangLink
               href={routes.signin}

@@ -88,11 +88,9 @@ export function Component() {
         canonical="login"
       />
 
-      <Logo className="text-secondary" />
-      <Heading className="mt-3  text-secondary">
-        {t("LoginForm.heading")}
-      </Heading>
-      <SubHeading className="text-balance text-center mb-3 text-secondary">
+      <Logo className="" />
+      <Heading className="mt-3  ">{t("LoginForm.heading")}</Heading>
+      <SubHeading className="text-balance text-center mb-3 ">
         {t("LoginForm.welcome_msg")}
       </SubHeading>
 
@@ -101,7 +99,7 @@ export function Component() {
           encType="multipart/form-data"
           method="post"
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="flex-col-center w-1/5 md:w-10/12 min-w-[450px] md:min-w-[300px] gap-1 border py-5 px-7 border-muted rounded-3xl shadow-xl hover:animated-blob"
+          className="flex-col-center w-1/5 md:w-10/12 min-w-[450px] md:min-w-[300px] gap-1 border border-primary py-5 px-7  rounded-3xl shadow-xl hover:animated-blob"
         >
           {/** Email  */}
           <EmailComponent
@@ -128,7 +126,7 @@ export function Component() {
               label={t("LoginForm.remember_me.label")}
               className="text-sm"
             />
-            <h3 className="text-input underline underline-offset-4 text-sm cursor-default">
+            <h3 className="text-primary underline underline-offset-4 text-sm cursor-default">
               {t("LoginForm.Forgot_password")}
             </h3>
           </div>
@@ -141,7 +139,7 @@ export function Component() {
           >
             {t("LoginForm.SubmitBtnComponent.value")}
           </Button>
-          <div className="w-full flex justify-center items-center gap-1 text-sm mt-3 text-secondary">
+          <div className="w-full flex justify-center items-center gap-1 text-sm mt-3 ">
             {t("LoginForm.have_no_account")}
             <LangLink
               href={routes.signup}

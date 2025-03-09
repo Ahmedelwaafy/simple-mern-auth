@@ -1,7 +1,7 @@
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
 import { SignInDto } from './dto/signin.dto';
-import { AuthService } from './providers/auth.service';
+import { AuthService } from './auth.service';
 import {
   Body,
   Controller,
@@ -29,6 +29,10 @@ export class AuthController {
     summary: 'signin as a user',
     description: 'signin as a user',
   })
+  @ApiBody({
+    description: 'User credentials for login',
+    type: SignInDto,
+  })
   @ResponseMessage('Logged in successfully')
   async signIn(
     @Body() signInDto: SignInDto,
@@ -47,10 +51,15 @@ export class AuthController {
     summary: 'Create a new account',
     description: 'Create a new account',
   })
+  @ApiBody({
+    description: 'User credentials for login',
+    type: CreateUserDto,
+  })
   @ResponseMessage('Account created successfully')
   async signUp(@Body() createUserDto: CreateUserDto) {
     return this.authService.signUp(createUserDto);
   }
+
   @Post('sign-out')
   @HttpCode(HttpStatus.OK)
   @ApiResponse({

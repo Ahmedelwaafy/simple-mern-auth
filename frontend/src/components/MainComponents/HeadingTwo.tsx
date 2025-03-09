@@ -11,7 +11,7 @@ function HeadingTwo({ className, children, colored = true }: IHeadingsProps) {
     >
       <span
         className={cn(
-          `${colored ? "text-secondary" : "text-secondary"}`,
+          `${colored ? "" : ""}`,
           className
         )}
       >

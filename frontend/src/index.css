@@ -132,7 +132,7 @@ html:lang(ar) body {
   .light-bg-inputs,
   .dark-bg-inputs,
   textarea {
-    @apply text-base  font-normal rounded-md transition-shadow duration-200 border-none text-input shadow-[0_0_0_1px] shadow-input disabled:opacity-60 disabled:cursor-no-drop;
+    @apply text-base  font-normal rounded-md transition-shadow duration-200 border-none text-primary shadow-[0_0_0_1px] shadow-primary disabled:opacity-60 disabled:cursor-no-drop;
   }
 
   .light-bg-inputs,
@@ -153,7 +153,7 @@ html:lang(ar) body {
   .light-bg-inputs,
   .dark-bg-inputs,
   textarea {
-    @apply placeholder:text-base placeholder:text-input placeholder:opacity-50 placeholder:font-normal;
+    @apply placeholder:text-base placeholder:text-primary placeholder:opacity-50 placeholder:font-normal;
   }
 
   .light-bg-inputs,
@@ -165,7 +165,7 @@ html:lang(ar) body {
   .light-bg-inputs,
   .dark-bg-inputs,
   textarea {
-    @apply focus:shadow-[0_0_0_2px] focus:shadow-input focus:text-input  focus:placeholder:text-input;
+    @apply focus:shadow-[0_0_0_2px] focus:shadow-primary focus:text-primary  focus:placeholder:text-primary;
   }
   .light-bg-inputs,
   textarea {
@@ -176,11 +176,7 @@ html:lang(ar) body {
     @apply focus:bg-background;
   }
   label {
-    @apply text-base font-normal text-input  tracking-normal w-full;
-  }
-  .dark-bg-submit,
-  .light-bg-submit {
-    @apply w-full !mt-7 px-4 cursor-pointer trns text-base !rounded-md text-center font-normal tracking-normal border-none text-background bg-accent hover:bg-transparent hover:text-accent hover:scale-105 active:scale-90 disabled:opacity-60 disabled:!cursor-no-drop disabled:active:scale-100 disabled:hover:scale-100 disabled:hover:text-background disabled:hover:bg-accent shadow-[0_0_0_1px] shadow-accent focus:shadow-[0_0_0_2px];
+    @apply text-base font-normal text-primary  tracking-normal w-full;
   }
 
   input[type="file"] {

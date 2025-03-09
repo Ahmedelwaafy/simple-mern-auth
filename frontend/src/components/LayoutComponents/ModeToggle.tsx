@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/app/reduxHooks";
 import { cn } from "@/lib/utils";
 import { ChangeEvent } from "react";
 
-export function ModeToggle({ className }: { className: string }) {
+export function ModeToggle({ className }: { className?: string }) {
   const dispatchRedux = useAppDispatch();
   const Theme = useAppSelector(theme);
   function handleModeToggle(e: ChangeEvent<HTMLInputElement>) {
@@ -27,7 +27,7 @@ export function ModeToggle({ className }: { className: string }) {
             viewBox="0 0 24 24"
             fill="currentColor"
             width="20"
-            height="20"
+            height="20" className="invert"
           >
             <path
               fillRule="evenodd"
