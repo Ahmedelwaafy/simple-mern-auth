@@ -22,13 +22,13 @@ export function createApp(app: INestApplication) {
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('NestJs Simple Auth System API')
-    .setDescription('Use the base API URL as http://localhost:3000')
-    .setTermsOfService('http://localhost:3000/terms-of-service')
+    .setDescription('Use the base API URL as https://simple-mern-auth-production.up.railway.app')
+    .setTermsOfService('https://simple-mern-auth-production.up.railway.app/terms-of-service')
     .setLicense(
       'MIT License',
       'https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt',
     )
-    .addServer('http://localhost:3000')
+    .addServer('https://simple-mern-auth-production.up.railway.app')
     .setVersion('1.0')
     .build();
 
@@ -40,7 +40,10 @@ export function createApp(app: INestApplication) {
 
   //* enable cors
   app.enableCors({
-    origin: 'http://localhost:5173', // Your frontend URL
+    origin: [
+      'http://localhost:5173',
+      'https://simple-mern-auth-alpha.vercel.app',
+    ], // Your frontend URL
     credentials: true, // IMPORTANT for cookies
   });
 }
