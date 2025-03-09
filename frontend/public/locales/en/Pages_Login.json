@@ -1,0 +1,38 @@
+{
+  "tab": {
+    "title": "Login | Sacramento"
+  },
+
+  "LoginForm": {
+    "heading": "Login",
+    "welcome_msg": "Welcome back! Please enter your information.",
+    "email": {
+      "label": "Email",
+      "placeholder": "Email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password"
+    },
+    "remember_me": {
+      "label": "Remember me"
+    },
+    "SubmitBtnComponent": { "value": "Login" },
+    "have_no_account": "Don't have an account?",
+    "register": "Create one",
+    "Forgot_password": "Forgot password ?"
+  },
+  "validations": {
+    "email": {
+      "required": "Email is required.",
+      "pattern": "Invalid Email Address."
+    },
+    "password": {
+      "required": "Password is required.",
+      "minLength": "Password must be at least 8 characters long.",
+      "letter": "Password must contain at least one letter.",
+      "number": "Password must contain at least one number.",
+      "specialChar": "Password must contain at least one special character."
+    }
+  }
+}

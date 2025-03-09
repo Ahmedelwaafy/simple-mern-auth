@@ -1,0 +1,71 @@
+{
+  "tab": {
+    "title": "Sacramento | إنشاء حساب",
+    "description": "Sacramento | أدخل التفاصيل الخاصة بك وقم بإنشاء حساب جديد."
+  },
+  "heading": "إنشاء حساب",
+  "welcome_msg": "أدخل التفاصيل الخاصة بك وقم بإنشاء حساب جديد.",
+  "form": {
+    "name": {
+      "label": "الاسم",
+      "placeholder": "الاسم"
+    },
+
+    "phone": {
+      "label": "الهاتف",
+      "placeholder": "الهاتف"
+    },
+    "email": {
+      "label": "البريد الإلكتروني",
+      "placeholder": "البريد الإلكتروني"
+    },
+    "password": {
+      "label": "كلمة المرور",
+      "placeholder": "كلمة المرور"
+    },
+    "confirmPassword": {
+      "label": "تأكيد كلمة المرور",
+      "placeholder": "تأكيد كلمة المرور"
+    },
+    "terms": {
+      "txt": " أوافق علي",
+      "CTA": "سياسة الخصوصية ",
+      "validation_required": "يجب الموافقة علي سياسة الخصوصية."
+    },
+    "SubmitBtnComponent": {
+      "value": "إنشاء الحساب"
+    }
+  },
+  "form__bottom": {
+    "have_an_account": "هل لديك حساب؟",
+    "Login": "تسجيل الدخول"
+  },
+  "validations": {
+    "avatar": {
+      "required": "الصورة الشخصية مطلوبة",
+      "validate": "الحد الاقصي لحجم الصورة هو 2 ميجا."
+    },
+    "name": {
+      "required": "الإسم مطلوب"
+    },
+    "phone": {
+      "required": "رقم الهاتف مطلوب.",
+      "pattern": "رقم الهاتف غير صحيح.",
+      "maxLength": "رقم الهاتف غير صحيح.",
+      "minLength": "رقم الهاتف غير صحيح."
+    },
+    "email": {
+      "required": "البريد الالكتروني مطلوب.",
+      "pattern": " البريد الإلكتروني غير صحيح."
+    },
+    "password": {
+      "required": "كلمة المرور مطلوبة.",
+      "minLength": "الحد الأدنى لكلمة المرور هو 8 أحرف."
+    },
+    "confirmPassword": {
+      "required": "تأكيد كلمة المرور مطلوب.",
+      "minLength": "الحد الأدنى لتأكيد كلمة المرور هو 8 أحرف.",
+      "validate": "كلمات المرور غير متطابقة."
+    }
+  }
+}

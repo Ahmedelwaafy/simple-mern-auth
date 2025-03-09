@@ -1,0 +1,39 @@
+{
+  "tab": {
+    "title": "Sacramento",
+    "description": "Sacramento"
+  },
+  "hero_cta": "Shop Now",
+  "Features": [
+    { "title": "Free Shipping", "sub_title": "From all orders over 1000$" },
+    { "title": "Daily Offers", "sub_title": "Daily Offers Up to 50%" },
+    { "title": "Best Prices", "sub_title": "Best Prices Guaranteed" },
+    { "title": "Own your Shop", "sub_title": "Start selling from today" }
+  ],
+  "best_deals": "Best Deals",
+  "new_arrivals": {
+    "title": "New Arrivals",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam soluta facere, dicta corrupti provident expedita distinctio fugiat iure commodi velit deleniti officiis! In doloremque alias esse obcaecati magni accusamus, quia autem sunt rerum a nihil laborum similique velit dolor fuga!",
+    "cta_txt": "Show All"
+  },
+
+  "featured_products": "Featured Products",
+  "popular_events": "Popular Events",
+  "show_product": "Show Product",
+  "product_card": {
+    "tooltips": {
+      "add_to_wishlist": "Add to Wishlist",
+      "add_to_cart": "Add to Cart",
+      "view_details": "View Details",
+      "count_formatted": "{{count,number}}",
+      "count_formatted_sold": "{{count,number}} Sold"
+    },
+    "added_to_cart_toast": "Item Added to Cart ",
+    "add_to_cart_btn": "Add to Cart",
+    "send_msg_to_shop_btn": "Send Message"
+  },
+  "event_card": {
+    "count_formatted": "{{count,number}}",
+    "count_formatted_sold": "{{count,number}} Sold"
+  }
+}

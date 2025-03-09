@@ -1,0 +1,8 @@
+{
+  "LogOutPopUp": {
+    "LogOutPopUpTitle": "هل أنت متأكد أنك تريد تسجيل الخروج ؟",
+    "SubmitBtnText": "تأكيد",
+    "CancelBtnText": "رجوع",
+    "toast_error": "الرجاء تسجيل الدخول أولا!"
+  }
+}
