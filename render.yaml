@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: simple-mern-auth-backend
+    env: node
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DATABASE
+        value: nest-simple-auth-database
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_TOKEN_AUDIENCE
+        value: simple-mern-auth-backend.onrender.com
+      - key: JWT_TOKEN_ISSUER
+        value: simple-mern-auth-backend.onrender.com
+      - key: JWT_ACCESS_TOKEN_TTL
+        value: 3600
+      - key: JWT_REFRESH_TOKEN_TTL
+        value: 86400
+      - key: API_VERSION
+        value: v1
+        
+  - type: web
+    name: simple-mern-auth-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_RECAPTCHA_KEY
+        value: 6LeOss0pAAAAAMXYSjEpLiaJQ7Wjm_33nyPVF3yN
+      - key: VITE_BACKEND_URL
+        value: https://simple-mern-auth-backend.onrender.com/api/v1

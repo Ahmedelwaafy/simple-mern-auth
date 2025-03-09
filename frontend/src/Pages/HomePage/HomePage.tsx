@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -30,7 +30,7 @@ export function Component() {
     Subject,
     { name: string }
   >(ADD_SUBJECT, {
-    onSuccess: (data) => {
+    onSuccess: () => {
       queryClient.refetchQueries({
         queryKey: [GET_SUBJECTS_LIST],
       });

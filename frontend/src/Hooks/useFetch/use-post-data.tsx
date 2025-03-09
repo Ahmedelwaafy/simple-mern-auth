@@ -3,22 +3,24 @@
 import apiClient from "@/services/api";
 import { ApiConfigOptions, ApiError, ApiResponse } from "@/types";
 import { useMutation, UseMutationOptions } from "@tanstack/react-query";
-import { toast } from "sonner";
 
-interface MutateOptions<TBody,TResponse> {
+interface MutateOptions<TBody, TResponse> {
   body: TBody;
   params?: Record<string, string | number>;
   query?: Record<string, string>;
-  onSuccessFromMutate?:(data:TResponse)=>void
-  onErrorFromMutate?:(error:any)=>void
-
+  onSuccessFromMutate?: (data: TResponse) => void;
+  onErrorFromMutate?: (error: any) => void;
 }
 
 interface MutationConfig<TResponse, TBody>
   extends Omit<ApiConfigOptions<TResponse>, "body" | "params" | "query"> {
   showToasts?: boolean;
   mutationOptions?: Omit<
-    UseMutationOptions<ApiResponse<TResponse>, ApiError, MutateOptions<TBody,TResponse>>,
+    UseMutationOptions<
+      ApiResponse<TResponse>,
+      ApiError,
+      MutateOptions<TBody, TResponse>
+    >,
     "mutationFn" | "onSuccess" | "onError"
   >;
 }
@@ -26,15 +28,13 @@ export default function usePostData<TResponse = unknown, TBody = unknown>(
   endpoint: string,
   config: MutationConfig<TResponse, TBody> = {}
 ) {
-  const {
-    showToasts = true,
-    onSuccess,
-    onError,
-    mutationOptions,
-    accessToken,
-  } = config;
+  const { onSuccess, onError, mutationOptions, accessToken } = config;
 
-  return useMutation<ApiResponse<TResponse>, ApiError, MutateOptions<TBody,TResponse>>({
+  return useMutation<
+    ApiResponse<TResponse>,
+    ApiError,
+    MutateOptions<TBody, TResponse>
+  >({
     mutationFn: async ({ body, params, query }) => {
       return apiClient<TResponse, TBody>(endpoint, {
         body,
