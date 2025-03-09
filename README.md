@@ -39,6 +39,28 @@ npm run start:dev
 ```
 The backend API will be available at `http://localhost:3000`
 
+### Environment Variables
+
+#### Backend (.env)
+Create a `.env` file in the backend directory with the following variables:
+```
+MONGODB_URI=mongodb://username:password@your-mongodb-uri.com:27017
+MONGODB_DATABASE=your-database-name
+JWT_SECRET=your-secret-key
+JWT_TOKEN_AUDIENCE=https://your-frontend-url.com
+JWT_TOKEN_ISSUER=https://your-backend-url.com
+JWT_ACCESS_TOKEN_TTL=3600
+JWT_REFRESH_TOKEN_TTL=86400
+API_VERSION=v1
+```
+
+#### Frontend (.env)
+Create a `.env` file in the frontend directory with the following variables:
+```
+VITE_RECAPTCHA_KEY=your-recaptcha-site-key
+VITE_BACKEND_URL=http://localhost:3000/api/v1
+```
+
 ## Frontend Features
 
 ### Localization
