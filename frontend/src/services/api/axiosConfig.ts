@@ -17,7 +17,7 @@ axiosInstance.interceptors.request.use(
     const { lang, token } = await getLanguageAndToken();
     console.log("lang", lang);
     config.headers["lang"] = lang;
-    if (token) config.headers["Authorization"] = `Bearer ${token}`;
+    //if (token) config.headers["Authorization"] = `Bearer ${token}`;
     return config;
   },
   (error) => {

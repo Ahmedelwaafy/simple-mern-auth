@@ -40,7 +40,7 @@ export const apiClient = async <TResponse = any, TBody = any>(
   const defaultHeaders: Record<string, string> = {
     "Content-Type": "application/json",
     lang,
-    ...(userToken && { Authorization: `Bearer ${userToken}` }),
+    //...(userToken && { Authorization: `Bearer ${userToken}` }),
   };
 
   const headers = { ...defaultHeaders, ...endpoint.config?.headers };

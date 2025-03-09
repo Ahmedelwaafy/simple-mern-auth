@@ -23,14 +23,13 @@ export class AccessTokenGuard implements CanActivate {
     private readonly jwtConfiguration: ConfigType<typeof jwtConfig>,
   ) {}
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    console.log(' canActivate runs ...');
     // extract the request from the context
     const request = context.switchToHttp().getRequest();
 
     // extract the access token from the request headers
 
     const token = this.extractHttpOnlyAccessTokenCookie(request);
-    console.log({ token_value: token });
+    //console.log({ token_value: token });
     //validate the access token using the jwt service
     if (!token) {
       throw new UnauthorizedException('Access token not found');

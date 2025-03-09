@@ -33,14 +33,17 @@ export function createApp(app: INestApplication) {
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api/docs', app, document);
 
   //* cookie parser
   app.use(cookieParser());
 
   //* enable cors
   app.enableCors({
-    origin: 'http://localhost:5173', // Your frontend URL
+    origin: [
+      'http://localhost:5173',
+      'https://simple-mern-auth-alpha.vercel.app',
+    ], // Your frontend URL
     credentials: true, // IMPORTANT for cookies
   });
 }

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { JwtModule } from '@nestjs/jwt';
@@ -12,7 +12,8 @@ import { DataResponseInterceptor } from './common/interceptors/data-response/dat
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { SubjectModule } from './subject/subject.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
-
+import { LoggerMiddleware } from './common/middleware/logger.middleware';
+import { AppLogger } from './common/logger/logger.config';
 const ENV = process.env.NODE_ENV;
 //console.log({ ENV });
 @Module({
@@ -28,19 +29,20 @@ const ENV = process.env.NODE_ENV;
     MongooseModule.forRootAsync({
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
-        console.log('Attempting to connect to MongoDB...');
+        const logger = new AppLogger('MongoDB');
+        logger.log('Attempting to connect to MongoDB...');
         return {
           uri: configService.get<string>('database.uri'),
           dbName: configService.get<string>('database.dbName'),
           connectionFactory: (connection) => {
             connection.on('connected', () => {
-              console.log('MongoDB connection established successfully');
+              logger.log('MongoDB connection established successfully');
             });
             connection.on('error', (error) => {
-              console.error('MongoDB connection error:', error);
+              logger.error('MongoDB connection error:', error.message);
             });
             connection.on('disconnected', () => {
-              console.log('MongoDB disconnected');
+              logger.warn('MongoDB disconnected');
             });
             return connection;
           },
@@ -72,6 +74,11 @@ const ENV = process.env.NODE_ENV;
       provide: APP_FILTER,
       useClass: HttpExceptionFilter,
     },
+    AppLogger,
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}
