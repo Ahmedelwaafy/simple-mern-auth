@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserModule } from './user/user.module';
 import { JwtModule } from '@nestjs/jwt';
@@ -9,13 +9,17 @@ import databaseConfig from './config/database.config';
 import environmentValidation from './config/environment.validation';
 import jwtConfig from './config/jwt.config';
 import { DataResponseInterceptor } from './common/interceptors/data-response/data-response.interceptor';
-import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { SubjectModule } from './subject/subject.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { AppLogger } from './common/logger/logger.config';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { AppThrottlerGuard } from './common/guards/throttler.guard';
+import securityConfig from './config/security.config';
+
 const ENV = process.env.NODE_ENV;
-//console.log({ ENV });
+
 @Module({
   imports: [
     UserModule,
@@ -23,7 +27,7 @@ const ENV = process.env.NODE_ENV;
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: !ENV ? '.env' : `.env.${ENV}`,
-      load: [appConfig, databaseConfig, jwtConfig],
+      load: [appConfig, databaseConfig, jwtConfig, securityConfig],
       validationSchema: environmentValidation,
     }),
     MongooseModule.forRootAsync({
@@ -53,13 +57,23 @@ const ENV = process.env.NODE_ENV;
       global: true,
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        // Use secret as the default
         secret: configService.get<string>('jwt.secret'),
         signOptions: {
           expiresIn: `${configService.get<number>('jwt.accessTokenTtl')}s`,
           audience: configService.get<string>('jwt.audience'),
           issuer: configService.get<string>('jwt.issuer'),
         },
+      }),
+    }),
+    ThrottlerModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        throttlers: [
+          {
+            ttl: config.get<number>('security.throttle.ttl'),
+            limit: config.get<number>('security.throttle.limit'),
+          },
+        ],
       }),
     }),
     SubjectModule,
@@ -73,6 +87,10 @@ const ENV = process.env.NODE_ENV;
     {
       provide: APP_FILTER,
       useClass: HttpExceptionFilter,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: AppThrottlerGuard,
     },
     AppLogger,
   ],
