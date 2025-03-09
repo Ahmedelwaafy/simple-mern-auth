@@ -40,10 +40,7 @@ export function createApp(app: INestApplication) {
 
   //* enable cors
   app.enableCors({
-    origin: [
-      'http://localhost:5173',
-      'https://simple-mern-auth-alpha.vercel.app',
-    ], // Your frontend URL
+    origin: 'http://localhost:5173', // Your frontend URL
     credentials: true, // IMPORTANT for cookies
   });
 }
